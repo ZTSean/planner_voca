@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+  p {
+     font-size: 18px;
+  }
+  </style>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>CS 6750 HW4</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Introduction</a></li>
+        <li><a href="#section2">Tools</a></li>
+        <li><a href="#section3">Implementation</a></li>
+        <li><a href="#section4">Prototype</a></li>
+      </ul><br>
+    </div>
+
+    <div class="col-sm-9">
+      <h4><small>ZIXIAO WANG</small></h4>
+      <hr>
+      <h2>Introduction</h2>
+      <p>People have their own habits of planning their daily events. Some of them prefer to keep everything scheduled in mind rather than writing it down while some of them could not clear things up and have to record the events somewhere so that they will not forget. It is quite an interesting topic that how people choose their prefered tools to manage their daily life. My team members and I focused on the topic of improving people users experience on planner interaction. There are three categories we concluded about people’s event management: memory, paper planner, and electronic planner. </p>
+      <br><br>
+
+      <h2 id="section2">TOOLS</h2>
+      <h3>
+        <span class="label label-success">jQuery.fbMenssenger</span>
+        <span class="label label-default">Botframe</span>
+        <span class="label label-info">Botsociety</span>
+        <span class="label label-primary">Motion.AI</span>
+        <span class="label label-warning">Zapier</span>
+      </h3>
+      <p>After making a decision on the solution of using conversation based AI to improve electronic planner’s user experience according to the feedback collected from users, I started looking for techniques and tools to prototype our solution. Because of time and knowledge limitation, the first idea came to my mind is to find existing natural language processing(NLP) libraries and tools that could satisfy our demands for technical side. It turned out to be frustrating that most libraries or tools took too much learning cost and forced me to focusing on some less important functionalities. The most important functionality I should focus on is dealing with the logic behind the conversation based planner. To be more specific, how artificial intelligence(AI) analyses user’s input and takes responsive actions in some sort of pre-defined logic.</p>
+      <br><br>
+    
+      <h2>Searched Techniques and Tools</h2>
+      <h3><strong>jQuery.fbMessenger</strong></h4>
+      <p>A jQuery plugin to easily visualize fake Facebook Messenger interactions, with an iPhone theme. Ideal for your bot landing page.  It is a more coding based library that support simulating Facebook Messenger functionalities. For now, it has implemented image reply, text reply, etc. The audio reply is currently not supported. It could only simulates single thread that could not revert back and could not dynamically analyse user’s input.</p>
+      <figure class="figure">
+        <img src="./image01.png" class="center-block img-responsive" alt="Responsive image">
+        <figcaption class="figure-caption text-center">Figure 1.</figcaption>
+      </figure>
+      <br>
+
+      <h4><strong>Botframe</strong></h4>
+      <p>A specialised design tool to create bots, which also is a single flow Facebook Messenger-like simulators. As it shows in the figure below, designer could add new text by clicking add button in the left-bottom corner. It generates a static “image” of chatting flow, which also limits the interaction between users.</p>
+
+      <figure class="figure">
+        <img src="./image02.png" class="center-block img-responsive" alt="Responsive image">
+        <figcaption class="figure-caption text-center">Figure 2.</figcaption>
+      </figure>
+      <br>
+
+      <h3><strong>jQuery.fbMessenger</strong></h4>
+      <p>it is also a static chatting flow design tool used for simulting chatbot process. One of advantages is that Botsociety support not only text and image input, it also accept complex location and voice message input. However, it could not simulate real-time conversation with dynamic inputs.</p>
+      <figure class="figure">
+        <img src="./image03.png" class="center-block img-responsive" alt="Responsive image">
+        <figcaption class="figure-caption text-center">Figure 3.</figcaption>
+      </figure>
+      <br>
+
+      <h2 id="section3">Implementation</h2>
+      <hr>
+      <h3><strong>Motion.AI</strong></h3>
+      <p>Considering the limitation mentioned by tools or techniques above, I found Motion.AI, which satisfied most of our demands for functionalities enabling us to simulate the conversation in real-time.</p>
+
+      <p>It supports streamlining conversation flow into a chatbot, which is not static and fixed. Each “round” of interaction between the Artificial Intelligence and the user is defined as a module and it provides various types of modules for design demands including plain text module, multi-choice module, Sentiment module, Email collection, Address collection, number collection, number collection, NodeJS module, etc. Comparing to other tools mentioned above, Motion.AI facilitates designer to build linkage among customizable modules so that the chatbot AI could accept dynamic input from users and redirected to other modules according to the analysis result from the input. I learned the basic ideas of developing chatbot AI from Motion.AI official <a href="http://docs.motion.ai/">Document</a> and its intuitive graphic user interface helps a lot leading new users into their product. </p>
+      <div class="row">
+        <div class="col-sm-7">
+          <figure class="figure">
+            <img src="./image04-1.png" class="center-block img-responsive" alt="Responsive image">
+            <figcaption class="figure-caption text-center">Figure a.</figcaption>
+          </figure>
+        </div>
+
+        <div class="col-sm-5">
+          <figure class="figure">
+            <img src="./image04-2.png" class="center-block img-responsive" alt="Responsive image">
+            <figcaption class="figure-caption text-center">Figure b.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <br>
+
+      <h3><strong>Zapier</strong></h3>
+      <p>In addition, the webhook embedded in every connection among modules enables remote data searching, collection, analyzing through various supported services. For our implementation, we implemented events querying and storage in linked Google Calendar, which could be directly put in use instantly. Other possible functionalities are differed according to the webhook service provider. We choose <a href="https://zapier.com/" class="btn btn-primary" role="button">Zapier</a> as our webhook service provider because it does require us to set up webhook server by ourselves and it provides a great amount of existing services. As Figure c shows, we implemented our input, query related functionalities by setting up some remote webhooks. Zapier already had predefined service that we could utilize so that we took advantage of it.</p>
+      <figure class="figure">
+        <img src="./image05.png" class="center-block img-responsive" alt="Responsive image">
+        <figcaption class="figure-caption text-center">Figure c.</figcaption>
+      </figure>
+      <br>
+
+      <p>However, it also limits our functionalities implementation that we could not design the transmitting data by ourselves. All the data object has been pre-defined. There are limited data fields we could retrieved from the caught webhook</p>
+      <figure class="figure">
+        <img src="./image06.png" class="center-block img-responsive" alt="Responsive image">
+        <figcaption class="figure-caption text-center">Figure d.</figcaption>
+      </figure>
+      <br>
+
+      <p>The Motion.AI limits designers to follow the predefined logic instead of ideally recognizing users’ dynamic inputs using natural language processing like what Siri, Cortana does. In other words, it only admits following specific order. Because of this limitation, we could only design the process of analyzing inputs one by one. For example, to create a new event in calendar, the planner has to take detailed inputs from the user one by one (Figure. e) rather once at all, which is not what we ideally expected.</p>
+      <figure class="figure">
+      <img src="./image07.png" class="center-block img-responsive" alt="Responsive image">
+      <figcaption class="figure-caption text-center">Figure e.</figcaption>
+      </figure>
+      <br>
+
+      <p>Another limitation of this tool is that it could not take other formats of input instead of plain text. Thus, our expected analyzing voice message and image inputs could not be prototyped by this too. Although the AI could customize their output to users in various ways includes images, cards, buttons, links, it is not enough for our demands so we could not show our ideal design here. However, we could offer a rough prototype with major text based conversation functionalities by Motion.AI. It successfully simulates our expected conversation based planner on web based platforms, which actually works on Google Calendar by creating events, etc. We hope we could use this prototype to gather feedback from users comparing to original application planners, evaluating various functionalities based on pre-defined evaluation criteria. </p>
+      <p>To facilitate and help users to understand how our prototype works, we need instructions to help users understand what they can do and how they do with the conversation. Thus, we add “Help” option to our menu. Figure f shows exactly what kind of help instructions provided for users. It is pretty straightforward information that users could get from the main menu directly. </p>
+      <figure class="figure">
+      <img src="./image08.png" class="center-block img-responsive" alt="Responsive image">
+      <figcaption class="figure-caption text-center">Figure f.</figcaption>
+      </figure>
+      <br>
+
+
+      <h2 id="section4">PROTOTYPE</h2>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="https://api.motion.ai/webchat/45004?color=62a8ea&sendBtn=SEND&inputBox=Type%20something...&token=7f7d727d0d3a87e3779c1634f2f24b1f"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p class="text-center">Zixiao Wang | PSYC/CS6750 Human-Computer Interaction | zwang784@gatech.edu</p>
+</footer>
+
+</body>
+</html>
